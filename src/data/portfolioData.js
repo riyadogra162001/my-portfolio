@@ -48,6 +48,14 @@ export const experiences = [
 
 export const projects = [
   {
+    title: 'My Portfolio',
+    tech: 'React.js, Tailwind CSS',
+    description: 'A modern, fully responsive personal portfolio showcasing my frontend development skills, featured projects, technical expertise, and contact information. Built with React.js and Tailwind CSS, it delivers smooth animations, clean UI, and an optimized user experience.',
+    link: 'https://github.com/riyadogra162001/my-portfolio.git',
+    category: 'react',
+    highlights: ['Responsive Design', 'Smooth Animations', 'Project Showcase', 'Dark & Light Mode']
+  },
+  {
     title: 'Dream Travel CRM',
     tech: 'React.js, Tailwind CSS',
     description: 'A comprehensive frontend CRM system designed for travel agencies. Features include ticket booking pipelines, customer profiles, booking logs, and an analytical dashboard with responsive charts.',
@@ -63,7 +71,7 @@ export const projects = [
     highlights: ['Course Management', 'Payment Integration', 'Student Portal', 'Kajabi Customization']
   },
   {
-    title: 'Statics Themes Portfolio',
+    title: 'Statics Website Themes',
     tech: 'HTML5, CSS3, Bootstrap, JavaScript, jQuery, Responsive, Photoshop',
     description: 'Designed and developed static, fully responsive user interface themes for multiple organizations including Orbit Directory, RSPion, Glamor Grove, and Props Groups. Used Photoshop for image cutting and asset export.',
     category: 'static',
