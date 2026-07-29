@@ -4,8 +4,8 @@ import { Github, Linkedin } from './icons/BrandIcons'
 
 function Hero() {
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-28">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 items-center">
 
         {/* Hero Content */}
         <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
@@ -67,54 +67,105 @@ function Hero() {
         </div>
 
         {/* Hero Visual Card */}
-        <div className="lg:col-span-5 flex justify-center">
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+        <div className="lg:col-span-5 flex justify-center mt-10 lg:mt-0">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[22rem] md:h-[22rem] lg:w-96 lg:h-96">
 
             {/* Outer Decorative Rings */}
             <div className="absolute inset-0 rounded-full border-2 border-dashed border-violet-500/20 dark:border-violet-500/30 animate-spin-slow"></div>
-            <div className="absolute inset-4 rounded-full border border-cyan-500/10 dark:border-cyan-500/25 animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '25s' }}></div>
+            <div
+              className="absolute inset-4 rounded-full border border-cyan-500/10 dark:border-cyan-500/25 animate-spin-slow"
+              style={{
+                animationDirection: "reverse",
+                animationDuration: "25s",
+              }}
+            ></div>
 
-            {/* Main Glowing Card */}
-            <div className="absolute inset-8 rounded-3xl overflow-hidden glassmorphism flex flex-col justify-between p-6 sm:p-8 shadow-2xl border border-slate-200/50 dark:border-slate-700/80 animate-float">
+            {/* Main Card */}
+            <div className="absolute inset-4 sm:inset-6 md:inset-8 rounded-2xl sm:rounded-3xl overflow-hidden glassmorphism flex flex-col justify-between p-4 sm:p-6 md:p-8 shadow-2xl border border-slate-200/50 dark:border-slate-700/80 animate-float">
+
+              {/* Top */}
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-500 border border-violet-500/20">
-                  <Code size={20} />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-500 border border-violet-500/20">
+                  <Code size={18} className="sm:w-5 sm:h-5" />
                 </div>
-                <div className="flex space-x-1.5">
-                  <span className="py-1 font-mono text-[9px] text-emerald-500 bg-emerald-500/10 rounded-full px-1.5 font-bold uppercase">Active</span>
-                </div>
+
+                <span className="px-2 py-0.5 text-[8px] sm:text-[9px] font-mono font-bold uppercase text-emerald-500 bg-emerald-500/10 rounded-full">
+                  Active
+                </span>
               </div>
 
-              <div className="my-auto space-y-4">
+              {/* Content */}
+              <div className="my-auto space-y-3 sm:space-y-4">
+
                 <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold font-display">Title</p>
-                  <p className="text-lg font-bold text-slate-800 dark:text-slate-100">Web Designer & Front-End Developer</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold font-display">
+                    Title
+                  </p>
+
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold leading-tight text-slate-800 dark:text-slate-100">
+                    Web Designer &
+                    <br />
+                    Front-End Developer
+                  </h3>
                 </div>
+
                 <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold font-display">Specialization</p>
-                  <p className="text-sm font-medium text-slate-600 dark:text-slate-300">UI Theme Customization, React.js, Tailwind</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold font-display">
+                    Specialization
+                  </p>
+
+                  <p className="text-xs sm:text-sm leading-relaxed font-medium text-slate-600 dark:text-slate-300">
+                    UI Theme Customization,
+                    <br />
+                    React.js & Tailwind CSS
+                  </p>
                 </div>
+
               </div>
 
-              <div className="flex justify-between items-center pt-4 border-t border-slate-200/50 dark:border-slate-700/80">
-                <div className="flex space-x-2">
-                  <a href="https://github.com/riyadogra162001" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors" aria-label="GitHub">
-                    <Github size={16} />
+              {/* Footer */}
+              <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-slate-200/50 dark:border-slate-700/80">
+
+                <div className="flex gap-2">
+                  <a
+                    href="https://github.com/riyadogra162001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="p-1.5 sm:p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+                  >
+                    <Github size={14} className="sm:w-4 sm:h-4" />
                   </a>
-                  <a href="https://www.linkedin.com/in/riya-dogra-rd2001/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors" aria-label="LinkedIn">
-                    <Linkedin size={16} />
+
+                  <a
+                    href="https://www.linkedin.com/in/riya-dogra-rd2001/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="p-1.5 sm:p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+                  >
+                    <Linkedin size={14} className="sm:w-4 sm:h-4" />
                   </a>
                 </div>
-                <span className="text-xs font-mono text-violet-500 dark:text-violet-400 font-bold">&lt;Riya /&gt;</span>
+
+                <span className="text-[10px] sm:text-xs font-mono font-bold text-violet-500 dark:text-violet-400">
+                  &lt;Riya /&gt;
+                </span>
               </div>
             </div>
 
-            {/* Little Floating Decorative Elements */}
-            <div className="absolute top-2 right-2 p-3 rounded-2xl bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 backdrop-blur-md text-xs font-mono hidden sm:block">
-              const exp = "1+ Year"
+            {/* Floating Badge - Experience */}
+            <div className="absolute -top-2 right-0 top-2 right-2 block">
+              <div className="px-3 py-2 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md text-cyan-500 text-xs font-mono whitespace-nowrap shadow-lg">
+                const exp = "1+ Year"
+              </div>
             </div>
-            <div className="absolute bottom-2 left-2 p-3 rounded-2xl bg-fuchsia-500/10 text-fuchsia-500 border border-fuchsia-500/20 backdrop-blur-md text-xs font-mono hidden sm:block">
-              design: true
+
+            {/* Floating Badge - Design */}
+            <div className="absolute -bottom-1 sm:bottom-1 left-0 lg:bottom-4 left-2 block">
+              <div className="px-3 py-2 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 backdrop-blur-md text-fuchsia-500 text-xs font-mono whitespace-nowrap shadow-lg">
+                design: true
+              </div>
             </div>
 
           </div>

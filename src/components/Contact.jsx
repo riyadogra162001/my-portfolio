@@ -24,7 +24,7 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <section id="contact" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 lg:py-28">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
         {/* Column 1: Info */}

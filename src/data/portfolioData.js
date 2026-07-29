@@ -51,7 +51,7 @@ export const projects = [
     title: 'My Portfolio',
     tech: 'React.js, Tailwind CSS',
     description: 'A modern, fully responsive personal portfolio showcasing my frontend development skills, featured projects, technical expertise, and contact information. Built with React.js and Tailwind CSS, it delivers smooth animations, clean UI, and an optimized user experience.',
-    link: 'https://github.com/riyadogra162001/my-portfolio.git',
+    link: 'https://riyadograportfolio.vercel.app/',
     category: 'react',
     highlights: ['Responsive Design', 'Smooth Animations', 'Project Showcase', 'Dark & Light Mode']
   },
