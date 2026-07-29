@@ -17,7 +17,7 @@ function Skills() {
     : skills.filter(skill => skill.category === skillCategory)
 
   return (
-    <section id="skills" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <section id="skills" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 lg:py-28">
 
       <div className="space-y-4 text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5 text-violet-600 dark:text-violet-400 text-xs font-semibold uppercase tracking-wider badge-glow-purple">
