@@ -9,18 +9,33 @@ function Hero() {
 
         {/* Hero Content */}
         <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5 text-violet-600 dark:text-violet-400 text-xs font-semibold uppercase tracking-wider badge-glow-purple">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5 text-violet-600 dark:text-violet-400 text-xs font-semibold uppercase tracking-wider badge-glow-purple animate-float">
             <span>Web Designer & Frontend Developer</span>
           </div>
 
+          {/* Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display leading-[1.1] tracking-tight text-slate-900 dark:text-slate-50">
-            Designing & Developing <br />
-            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent text-glow">
+
+            <span className="hero-word-toggle">
+              <span className="hero-word-item hero-designing">
+                Designing
+              </span>
+
+              <span className="hero-word-item hero-developing">
+                Developing
+              </span>
+            </span>
+
+            <br />
+
+            <span className="hero-animate hero-delay-2 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent text-glow">
               Beautiful User Interfaces
             </span>
-          </h1>
 
-          <p className="max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+          </h1>
+          
+
+          <p className="mx-auto lg:mx-0 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
             Hi, I'm Riya Dogra. I specialize in building responsive, modern, and high-performance web applications using HTML, CSS, JavaScript, Bootstrap, React.js, Tailwind CSS, and
             custom design platforms. Additionally, I have basic knowledge of CMS platforms like Kajabi, Webflow, Squarespace, WordPress and Shopify, as well as design tools like Photoshop and Figma.
             I merge visual aesthetics with robust frontend code to deliver clean, user-friendly, and responsive web experiences.
@@ -155,7 +170,7 @@ function Hero() {
             </div>
 
             {/* Floating Badge - Experience */}
-            <div className="absolute -top-2 right-0 top-2 right-2 block">
+            <div className="absolute -top-3 right-0 sm:top-2 right-2 block">
               <div className="px-3 py-2 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md text-cyan-500 text-xs font-mono whitespace-nowrap shadow-lg">
                 const exp = "1+ Year"
               </div>
