@@ -96,3 +96,187 @@ body {
 .badge-glow-blue {
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
 }
+
+
+
+
+/* ==========================================
+   DESIGNING <-> DEVELOPING TOGGLE
+========================================== */
+
+.hero-word-toggle {
+  position: relative;
+  display: inline-block;
+  min-width: 8.5ch;
+  height: 1.15em;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.hero-word-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Designing */
+.hero-designing {
+  animation: designingLoop 6s ease-in-out infinite;
+}
+
+/* Developing */
+.hero-developing {
+  animation: developingLoop 6s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   DESIGNING
+========================================== */
+
+@keyframes designingLoop {
+
+  /* Enter */
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  /* Visible */
+  12% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stay */
+  38% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Exit backwards */
+  50% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  /* Wait */
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+/* ==========================================
+   DEVELOPING
+========================================== */
+
+@keyframes developingLoop {
+
+  /* Wait */
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  /* Wait */
+  45% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  /* Enter */
+  55% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stay */
+  78% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Exit backwards */
+  90% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  /* Reset */
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+/* ==========================================
+   AMPERSAND
+========================================== */
+
+.hero-ampersand {
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+
+  animation: ampersandPulse 6s ease-in-out infinite;
+}
+
+@keyframes ampersandPulse {
+
+  0%,
+  38% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.5;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+  .hero-word-toggle {
+    min-width: 8.5ch;
+  }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-item,
+  .hero-ampersand {
+    animation: none !important;
+  }
+
+  .hero-designing {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .hero-developing {
+    display: none;
+  }
+}
