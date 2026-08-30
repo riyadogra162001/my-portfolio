@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 function Navbar({ darkMode, setDarkMode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -13,7 +18,9 @@ function Navbar({ darkMode, setDarkMode }) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/50 glassmorphism transition-all duration-300">
+    <nav className={`sticky top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/50 glassmorphism transition-all duration-700 ease-out ${
+      mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+    }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center space-x-2">

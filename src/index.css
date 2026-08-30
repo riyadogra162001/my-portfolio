@@ -7,7 +7,7 @@
 @theme {
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-display: 'Outfit', sans-serif;
-  
+
   --color-brand-50: #f5f3ff;
   --color-brand-100: #ede9fe;
   --color-brand-200: #ddd6fe;
@@ -18,16 +18,132 @@
   --color-brand-700: #6d28d9;
   --color-brand-800: #5b21b6;
   --color-brand-900: #4c1d95;
-  
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-spin-slow: spin 20s linear infinite;
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  --animate-fade-up: fadeUp 0.9s ease forwards;
+  --animate-fade-down: fadeDown 0.8s ease forwards;
+  --animate-fade-left: fadeLeft 0.8s ease forwards;
+  --animate-fade-right: fadeRight 0.9s ease forwards;
+  --animate-zoom-in: zoomIn 0.8s ease forwards;
+  --animate-gradient: gradient 5s ease infinite;
+  --animate-glow: pulseGlow 2s infinite;
+  --animate-wiggle-slow: wiggleSlow 6s ease-in-out infinite;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
   }
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(139, 92, 246, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+  }
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes wiggleSlow {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   BASE
+========================= */
 
 html {
   scroll-behavior: smooth;
@@ -38,37 +154,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.2);
-  border-radius: 9999px;
-  border: 2px solid #0f172a;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.2);
-  border-radius: 9999px;
-  border: 2px solid #f8fafc;
-}
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.4);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.4);
-}
+/* =========================
+   GLASS
+========================= */
 
-/* Selection */
-::selection {
-  background-color: rgba(139, 92, 246, 0.3);
-  color: inherit;
-}
-
-/* Custom Glassmorphism utility */
 .glassmorphism {
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(12px);
@@ -78,17 +167,17 @@ body {
 
 .dark .glassmorphism {
   background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Text glow */
+/* =========================
+   GLOW
+========================= */
+
 .text-glow {
   text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
-/* Badge glows */
 .badge-glow-purple {
   box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
 }
@@ -97,12 +186,58 @@ body {
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
 }
 
+/* =========================
+   SCROLLBAR
+========================= */
 
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-/* ==========================================
-   DESIGNING <-> DEVELOPING TOGGLE
-========================================== */
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 9999px;
+  border: 2px solid #f8fafc;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 9999px;
+  border: 2px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: inherit;
+}
+
+/* =========================
+   GRADIENT
+========================= */
+
+.animate-gradient {
+  background-size: 300% 300%;
+}
+
+/* =========================
+   HERO WORD TOGGLE
+========================= */
 
 .hero-word-toggle {
   position: relative;
@@ -117,157 +252,86 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-
   white-space: nowrap;
-
   opacity: 0;
   transform: translateX(100%);
 }
 
-/* Designing */
 .hero-designing {
   animation: designingLoop 6s ease-in-out infinite;
 }
 
-/* Developing */
 .hero-developing {
   animation: developingLoop 6s ease-in-out infinite;
 }
 
-
-/* ==========================================
-   DESIGNING
-========================================== */
-
 @keyframes designingLoop {
-
-  /* Enter */
   0% {
     opacity: 0;
     transform: translateX(-100%);
   }
 
-  /* Visible */
   12% {
     opacity: 1;
     transform: translateX(0);
   }
 
-  /* Stay */
   38% {
     opacity: 1;
     transform: translateX(0);
   }
 
-  /* Exit backwards */
   50% {
     opacity: 0;
     transform: translateX(100%);
   }
 
-  /* Wait */
   100% {
     opacity: 0;
     transform: translateX(100%);
   }
 }
 
-
-/* ==========================================
-   DEVELOPING
-========================================== */
-
 @keyframes developingLoop {
-
-  /* Wait */
   0% {
     opacity: 0;
     transform: translateX(-100%);
   }
 
-  /* Wait */
   45% {
     opacity: 0;
     transform: translateX(-100%);
   }
 
-  /* Enter */
   55% {
     opacity: 1;
     transform: translateX(0);
   }
 
-  /* Stay */
   78% {
     opacity: 1;
     transform: translateX(0);
   }
 
-  /* Exit backwards */
   90% {
     opacity: 0;
     transform: translateX(100%);
   }
 
-  /* Reset */
   100% {
     opacity: 0;
     transform: translateX(100%);
   }
 }
 
-
-/* ==========================================
-   AMPERSAND
-========================================== */
-
-.hero-ampersand {
-  display: inline-block;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-
-  animation: ampersandPulse 6s ease-in-out infinite;
-}
-
-@keyframes ampersandPulse {
-
-  0%,
-  38% {
-    opacity: 1;
-  }
-
-  45% {
-    opacity: 0.5;
-  }
-
-  55% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
 @media (max-width: 640px) {
   .hero-word-toggle {
-    min-width: 8.5ch;
+    min-width: 7.5ch;
   }
 }
 
-
-/* ==========================================
-   REDUCED MOTION
-========================================== */
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-word-item,
-  .hero-ampersand {
+  .hero-word-item {
     animation: none !important;
   }
 
@@ -278,5 +342,88 @@ body {
 
   .hero-developing {
     display: none;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   PORTFOLIO DATA ANIMATIONS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   BADGE FLOAT & GLOW
+   --------------------------------------------------------- */
+
+#skills .badge-glow-purple,
+#projects .badge-glow-purple,
+#contact .badge-glow-purple {
+  animation:
+    badgeFloat 3s ease-in-out infinite,
+    badgeGlow 2s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes badgeGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.08);
+  }
+
+  50% {
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.25);
+  }
+}
+
+/* ---------------------------------------------------------
+   PROJECT CARDS REVEAL
+   --------------------------------------------------------- */
+
+@keyframes projectCardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card-animation {
+  animation: projectCardReveal 0.8s ease-out forwards;
+  animation-delay: var(--card-delay, 0ms);
+}
+
+/* =========================================================
+   REDUCED MOTION RESET
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
