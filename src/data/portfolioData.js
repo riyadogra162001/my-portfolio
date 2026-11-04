@@ -49,6 +49,8 @@ export const experiences = [
 export const projects = [
   {
     title: 'My Portfolio',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=960&q=80',
+    imageAlt: 'Laptop workspace with a web development setup',
     tech: 'React.js, Tailwind CSS',
     description: 'A modern, fully responsive personal portfolio showcasing my frontend development skills, featured projects, technical expertise, and contact information. Built with React.js and Tailwind CSS, it delivers smooth animations, clean UI, and an optimized user experience.',
     link: 'https://riyadograportfolio.vercel.app/',
@@ -57,6 +59,8 @@ export const projects = [
   },
   {
     title: 'Dream Travel CRM',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=960&q=80',
+    imageAlt: 'Travelers exploring a city destination',
     tech: 'React.js, Tailwind CSS',
     description: 'A comprehensive frontend CRM system designed for travel agencies. Features include ticket booking pipelines, customer profiles, booking logs, and an analytical dashboard with responsive charts.',
     category: 'react',
@@ -64,6 +68,8 @@ export const projects = [
   },
   {
     title: 'IAB Academy',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=960&q=80',
+    imageAlt: 'Students learning in a classroom',
     tech: 'Kajabi CMS, Custom HTML/CSS',
     description: 'An online learning and education platform featuring courses, user authentication, content management, and student engagement tools. Built and customized on the Kajabi CMS platform.',
     link: 'https://iabacademy.ai',
@@ -72,6 +78,8 @@ export const projects = [
   },
   {
     title: 'Statics Website Themes',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=960&q=80',
+    imageAlt: 'Website layout mockups displayed on a designer’s screen',
     tech: 'HTML5, CSS3, Bootstrap, JavaScript, jQuery, Responsive, Photoshop',
     description: 'Designed and developed static, fully responsive user interface themes for multiple organizations including Orbit Directory, RSPion, Glamor Grove, and Props Groups. Used Photoshop for image cutting and asset export.',
     category: 'static',

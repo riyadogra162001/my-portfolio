@@ -1,4 +1,3 @@
-import React from 'react'
 import { Code, ExternalLink } from 'lucide-react'
 import { projects } from '../data/portfolioData'
 import useInView from '../hooks/useInView'
@@ -141,6 +140,19 @@ function Projects() {
             {/* =========================
                 CARD CONTENT
             ========================== */}
+
+            <div
+              className="group -mx-6 -mt-6 mb-5 block max-w-none overflow-hidden rounded-t-3xl"
+              style={{ width: 'calc(100% + 3rem)' }}
+            >
+              <img
+                src={proj.image}
+                alt={proj.imageAlt}
+                loading="lazy"
+                decoding="async"
+                className="block aspect-video h-auto w-full max-w-none object-cover transition-transform duration-500 [@media(hover:hover)]:group-hover:scale-105"
+              />
+            </div>
 
             <div className="space-y-4">
 
