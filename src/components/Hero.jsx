@@ -1,5 +1,4 @@
-import React from 'react'
-import { Mail, Phone, Globe, Code } from 'lucide-react'
+import { Mail, Globe, Code } from 'lucide-react'
 import { Github, Linkedin } from './icons/BrandIcons'
 
 import useInView from '../hooks/useInView'
@@ -424,7 +423,6 @@ function Hero() {
                 rounded-2xl
                 sm:rounded-3xl
                 overflow-hidden
-                glassmorphism
                 flex
                 flex-col
                 justify-between
@@ -439,8 +437,20 @@ function Hero() {
               "
             >
 
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85"
+                alt=""
+                aria-hidden="true"
+                fetchPriority="high"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-950/70 to-violet-950/65"
+              />
+
               {/* Top */}
-              <div className="flex justify-between items-start">
+              <div className="relative z-10 flex justify-between items-start">
 
                 <div
                   className="
@@ -486,7 +496,7 @@ function Hero() {
 
 
               {/* Content */}
-              <div className="my-auto space-y-3 sm:space-y-4">
+              <div className="relative z-10 my-auto space-y-3 sm:space-y-4">
 
                 <div className="space-y-1">
 
@@ -496,8 +506,7 @@ function Hero() {
                       sm:text-xs
                       uppercase
                       tracking-widest
-                      text-slate-400
-                      dark:text-slate-500
+                      text-white/65
                       font-semibold
                       font-display
                     "
@@ -512,8 +521,7 @@ function Hero() {
                       md:text-xl
                       font-bold
                       leading-tight
-                      text-slate-800
-                      dark:text-slate-100
+                      text-white
                     "
                   >
                     Web Designer &
@@ -532,8 +540,7 @@ function Hero() {
                       sm:text-xs
                       uppercase
                       tracking-widest
-                      text-slate-400
-                      dark:text-slate-500
+                      text-white/65
                       font-semibold
                       font-display
                     "
@@ -547,8 +554,7 @@ function Hero() {
                       sm:text-sm
                       leading-relaxed
                       font-medium
-                      text-slate-600
-                      dark:text-slate-300
+                      text-white/85
                     "
                   >
                     UI Theme Customization,
@@ -564,14 +570,15 @@ function Hero() {
               {/* Footer */}
               <div
                 className="
+                  relative
+                  z-10
                   flex
                   justify-between
                   items-center
                   pt-3
                   sm:pt-4
                   border-t
-                  border-slate-200/50
-                  dark:border-slate-700/80
+                  border-white/25
                 "
               >
 
@@ -586,12 +593,9 @@ function Hero() {
                       p-1.5
                       sm:p-2
                       rounded-lg
-                      bg-slate-100
-                      hover:bg-slate-200
-                      dark:bg-slate-800
-                      dark:hover:bg-slate-700
-                      text-slate-700
-                      dark:text-slate-300
+                      bg-white/15
+                      hover:bg-white/25
+                      text-white
                       transition-colors
                     "
                   >
@@ -611,12 +615,9 @@ function Hero() {
                       p-1.5
                       sm:p-2
                       rounded-lg
-                      bg-slate-100
-                      hover:bg-slate-200
-                      dark:bg-slate-800
-                      dark:hover:bg-slate-700
-                      text-slate-700
-                      dark:text-slate-300
+                      bg-white/15
+                      hover:bg-white/25
+                      text-white
                       transition-colors
                     "
                   >
@@ -667,7 +668,8 @@ function Hero() {
                   border
                   border-cyan-500/20
                   backdrop-blur-md
-                  text-cyan-500
+                  text-cyan-900
+                  dark:text-cyan-400
                   text-xs
                   font-mono
                   whitespace-nowrap

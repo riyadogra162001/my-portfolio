@@ -7,9 +7,11 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { ArrowUp } from 'lucide-react'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   // Toggle theme class on document element
   useEffect(() => {
@@ -19,6 +21,15 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
+
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 400)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-800'}`}>
@@ -68,6 +79,18 @@ function App() {
 
       {/* Footer */}
       <Footer />
+
+      {showBackToTop && (
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Back to top"
+          title="Back to top"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-lg backdrop-blur transition hover:-translate-y-1 hover:bg-white dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:bg-slate-800"
+        >
+          <ArrowUp size={20} aria-hidden="true" />
+        </button>
+      )}
 
     </div>
   )
